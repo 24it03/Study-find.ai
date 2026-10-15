@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudyFind — Project Report</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--brand:#4f46e5;--line:#dbe3ef;--paper:#fff;--wash:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--wash);font:15px/1.65 Arial,Helvetica,sans-serif;color:var(--ink)}
+.toolbar{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;padding:12px;background:#172033;color:#fff}
+button{border:0;border-radius:8px;padding:10px 15px;font-weight:700;cursor:pointer;background:#818cf8;color:#111827}.secondary{background:#fff;color:#172033}
+.wrap{max-width:900px;margin:28px auto;padding:0 18px}.sheet{background:var(--paper);padding:56px 64px;margin:0 auto 24px;box-shadow:0 8px 30px #17203312;border:1px solid var(--line);min-height:900px}
+.cover{display:flex;min-height:760px;flex-direction:column;justify-content:center;text-align:center}.logo{width:78px;height:78px;border-radius:22px;background:linear-gradient(135deg,#4f46e5,#06b6d4);color:white;display:grid;place-items:center;font-size:34px;font-weight:800;margin:0 auto 24px}
+h1{font-size:40px;line-height:1.15;margin:8px 0;color:#202b4b}h2{font-size:25px;color:#3730a3;border-bottom:2px solid #e0e7ff;padding-bottom:8px;margin:0 0 18px}h3{font-size:18px;margin:24px 0 8px;color:#24314e}p{margin:8px 0 13px}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:2px;color:var(--brand);font-size:12px;font-weight:800}
+.meta{margin:36px auto 0;border-collapse:collapse;width:100%;max-width:520px;text-align:left}.meta td{border-bottom:1px solid var(--line);padding:11px}.meta td:first-child{font-weight:bold;width:38%}
+.callout{background:#eef2ff;border-left:4px solid var(--brand);padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0}
+ul,ol{padding-left:24px}li{margin:6px 0}.diagram{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:20px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;margin:18px 0}.step{background:#eef2ff;border:1px solid #c7d2fe;padding:10px 14px;border-radius:8px;font-weight:700}.arrow{color:var(--brand);font-size:22px}
+table.data{width:100%;border-collapse:collapse;margin:14px 0}table.data th,table.data td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}table.data th{background:#eef2ff}
+.edit-hint{font-size:12px;color:var(--muted);font-style:italic}.toc li{padding:3px 0}.footer{border-top:1px solid var(--line);margin-top:42px;padding-top:12px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+input.inline{border:0;border-bottom:1px dashed #94a3b8;background:transparent;font:inherit;color:inherit;width:90%;padding:4px}
+@media(max-width:640px){.sheet{padding:28px 22px;min-height:0}.cover{min-height:620px}h1{font-size:32px}.toolbar{position:static}}
+@page{size:A4;margin:15mm}
+@media print{body{background:white;font-size:11pt}.toolbar,.edit-hint{display:none!important}.wrap{max-width:none;margin:0;padding:0}.sheet{box-shadow:none;border:0;margin:0;padding:0;min-height:0;page-break-after:always}.sheet:last-child{page-break-after:auto}.cover{min-height:250mm}h2{break-after:avoid}h3{break-after:avoid}table,ul,.diagram{break-inside:avoid}.footer{margin-top:24px}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+<strong>StudyFind Report Maker</strong>
+<button onclick="window.print()">Print / Save as PDF</button>
+<button class="secondary" onclick="toggleEdit()">Edit report text</button>
+<button class="secondary" onclick="resetReport()">Reset template</button>
+</div>
+<div class="wrap" id="report">
+<section class="sheet cover">
+<div class="logo">SF</div>
+<div class="eyebrow">Web Application Development Project</div>
+<h1 contenteditable="true">StudyFind</h1>
+<h2 contenteditable="true" style="border:0;color:#64748b;font-size:22px">A Student-Focused Academic Resource & Study Guide Platform</h2>
+<p class="muted" contenteditable="true">Project Report</p>
+<table class="meta">
+<tr><td>Submitted by</td><td contenteditable="true">[Your Name]</td></tr>
+<tr><td>Enrollment No.</td><td contenteditable="true">[Your Enrollment Number]</td></tr>
+<tr><td>Course / Semester</td><td contenteditable="true">B.E. Information Technology — [Semester]</td></tr>
+<tr><td>College</td><td contenteditable="true">Sardar Patel College of Engineering</td></tr>
+<tr><td>Subject</td><td contenteditable="true">Web Application Development (WAD)</td></tr>
+<tr><td>Academic Year</td><td contenteditable="true">2026–2027</td></tr>
+</table>
+<p class="muted" style="margin-top:42px">Prepared for academic submission</p>
+</section>
+<section class="sheet">
+<h2>Declaration</h2>
+<p contenteditable="true">I hereby declare that the project titled <strong>“StudyFind”</strong> is prepared for academic learning and submission. The report describes the intended purpose, design, and implementation approach of the StudyFind web application. Any external libraries, services, or reference material used should be acknowledged according to the institution's guidelines.</p>
+<h2 style="margin-top:42px">Acknowledgement</h2>
+<p contenteditable="true">I would like to express my sincere gratitude to my subject faculty and college for providing the opportunity to work on this Web Application Development project. This project helped me understand the design of a student-oriented web application, responsive interfaces, search functionality, and database-backed resource management.</p>
+<h2 style="margin-top:42px">Abstract</h2>
+<p contenteditable="true">StudyFind is a student-focused web application concept designed to make academic resources easier to discover and revise. It brings subject-wise learning resources and topic-based study guides into one interface. The project is planned around subjects such as Database Management Systems (DBMS), Object-Oriented Programming (OOP), Operating Systems (OS), Data Structures and Algorithms (DSA), Web Application Development (WAD), and Mathematics. Search and subject navigation help students find relevant material, while the study-guide section provides concise revision content and exam-oriented answer structures. The interface is designed to be responsive and includes print-friendly pages that can be saved as PDF through the browser.</p>
+<div class="footer"><span>StudyFind — Project Report</span><span>Introduction</span></div>
+</section>
+<section class="sheet">
+<h2>Table of Contents</h2>
+<ol class="toc">
+<li>Introduction</li><li>Problem Statement</li><li>Objectives</li><li>Scope of the Project</li><li>System Requirements</li><li>Technology Stack</li><li>System Design and Workflow</li><li>Modules and Features</li><li>Database Design</li><li>Testing and Validation</li><li>Limitations and Future Enhancements</li><li>Conclusion</li><li>References</li>
+</ol>
+<h2 style="margin-top:40px">1. Introduction</h2>
+<p contenteditable="true">Students often need to search across multiple websites, folders, and classroom materials to locate notes, question papers, assignments, solved examples, and revision topics. StudyFind aims to provide a single, clear starting point for browsing academic resources and reviewing important concepts by subject.</p>
+<h2 style="margin-top:36px">2. Problem Statement</h2>
+<p contenteditable="true">Academic study material may be scattered across different sources and formats. This makes it difficult to locate relevant resources quickly, organise revision, and prepare answers according to examination mark patterns. A simple, searchable, subject-wise platform can reduce this friction.</p>
+<h2 style="margin-top:36px">3. Objectives</h2>
+<ul contenteditable="true"><li>Organise academic resources by subject and topic.</li><li>Provide a search-friendly interface for learning material.</li><li>Offer topic summaries, examples, key points, and exam-oriented practice prompts.</li><li>Support quick revision and browser-based printing or PDF saving.</li><li>Provide a responsive experience on desktop and mobile screens.</li></ul>
+<div class="footer"><span>StudyFind — Project Report</span><span>Project Overview</span></div>
+</section>
+<section class="sheet">
+<h2>4. Scope of the Project</h2>
+<p contenteditable="true">The current project scope focuses on the frontend experience for finding and revising study material. The site includes subject browsing, resource search, and a separate study-guides page. A database schema and API endpoint are part of the project structure for resource storage and search. Actual availability of resources depends on the records supplied to the application and the deployment configuration.</p>
+<h2 style="margin-top:34px">5. System Requirements</h2>
+<table class="data"><tr><th>Type</th><th>Requirement</th></tr>
+<tr><td>Hardware</td><td>Computer or smartphone; internet connection; modern display/browser.</td></tr>
+<tr><td>Client software</td><td>Recent version of Chrome, Firefox, Edge, Safari, or another modern browser.</td></tr>
+<tr><td>Frontend</td><td>HTML, CSS, JavaScript.</td></tr>
+<tr><td>Backend</td><td>JavaScript API endpoint hosted through the app platform.</td></tr>
+<tr><td>Database</td><td>PostgreSQL-compatible database schema for academic resources.</td></tr>
+<tr><td>Hosting / platform</td><td>Hatchable for project development and deployment; GitHub for source control.</td></tr></table>
+<h2 style="margin-top:34px">6. Technology Stack</h2>
+<table class="data"><tr><th>Technology</th><th>Purpose</th></tr>
+<tr><td>HTML5</td><td>Defines the page structure and content.</td></tr>
+<tr><td>CSS3</td><td>Controls layout, visual design, responsiveness, and print styles.</td></tr>
+<tr><td>JavaScript</td><td>Implements search, subject navigation, and dynamic page rendering.</td></tr>
+<tr><td>API endpoint</td><td>Provides a backend route for resource search.</td></tr>
+<tr><td>SQL / PostgreSQL</td><td>Defines and stores resource records.</td></tr>
+<tr><td>GitHub</td><td>Stores source files and tracks changes.</td></tr></table>
+<div class="footer"><span>StudyFind — Project Report</span><span>Requirements</span></div>
+</section>
+<section class="sheet">
+<h2>7. System Design and Workflow</h2>
+<p contenteditable="true">A student opens StudyFind, chooses a subject or searches for a keyword, reviews matching resource cards, and opens the relevant study guide or resource. On the guide page, the student can select a subject, search topics, review notes and exam-answer structures, and use the browser print dialog to save the material as a PDF.</p>
+<div class="diagram"><div class="step">Student</div><span class="arrow">→</span><div class="step">StudyFind UI</div><span class="arrow">→</span><div class="step">Search / Subject</div><span class="arrow">→</span><div class="step">Resources / Guides</div></div>
+<h3>High-level components</h3>
+<ul contenteditable="true"><li><strong>Presentation layer:</strong> homepage and study-guide pages built with HTML, CSS, and JavaScript.</li><li><strong>Search layer:</strong> frontend search interaction and a backend API route.</li><li><strong>Data layer:</strong> SQL migration and seed data for resource records.</li><li><strong>Print layer:</strong> print-specific CSS and browser print-to-PDF support.</li></ul>
+<h2 style="margin-top:34px">8. Modules and Features</h2>
+<table class="data"><tr><th>Module</th><th>Description</th></tr>
+<tr><td>Homepage</td><td>Introduces StudyFind and offers navigation to academic resources.</td></tr>
+<tr><td>Subject browsing</td><td>Groups study content by DBMS, OOP, OS, DSA, WAD, and Mathematics.</td></tr>
+<tr><td>Resource search</td><td>Helps users locate matching resource entries using keywords and filters implemented in the application.</td></tr>
+<tr><td>Study guides</td><td>Provides topic-based revision content, examples, key points, and exam-oriented structures.</td></tr>
+<tr><td>Print / PDF</td><td>Uses the browser's print function and print styles for paper or PDF output.</td></tr>
+<tr><td>Responsive design</td><td>Adapts the layout for different screen sizes.</td></tr></table>
+<div class="footer"><span>StudyFind — Project Report</span><span>Design & Features</span></div>
+</section>
+<section class="sheet">
+<h2>9. Database Design</h2>
+<p contenteditable="true">The project includes a SQL migration for the academic resource data model and a seed file for initial records. A resource record can represent a learning item such as notes, a question paper, an assignment, or a solution. Typical fields for this type of system include a title, subject, resource type, description, academic year or semester, and a link or file reference. Confirm the exact column names against the final migration before submitting this report.</p>
+<table class="data"><tr><th>Entity</th><th>Role</th></tr>
+<tr><td>Resources</td><td>Stores searchable academic resource metadata and references.</td></tr>
+<tr><td>Subject / category</td><td>Classifies content into academic subjects or resource categories.</td></tr></table>
+<h2 style="margin-top:36px">10. Testing and Validation</h2>
+<p contenteditable="true">Use the following test checklist and record the actual results after testing the deployed build.</p>
+<table class="data"><tr><th>Test case</th><th>Expected result</th><th>Actual result</th></tr>
+<tr><td>Open homepage</td><td>Page loads without visible layout errors.</td><td contenteditable="true">[Pass / Fail — add result]</td></tr>
+<tr><td>Search for a subject or keyword</td><td>Matching items are shown or a clear empty state appears.</td><td contenteditable="true">[Pass / Fail — add result]</td></tr>
+<tr><td>Switch subject in study guides</td><td>Topics for the selected subject are displayed.</td><td contenteditable="true">[Pass / Fail — add result]</td></tr>
+<tr><td>Search for a topic</td><td>Results are filtered by the entered text.</td><td contenteditable="true">[Pass / Fail — add result]</td></tr>
+<tr><td>Use Print / Save as PDF</td><td>Print layout is readable and controls are hidden.</td><td contenteditable="true">[Pass / Fail — add result]</td></tr>
+<tr><td>Open on mobile width</td><td>Content fits the viewport and remains usable.</td><td contenteditable="true">[Pass / Fail — add result]</td></tr></table>
+<div class="callout"><strong>Academic note:</strong> Replace each test placeholder with results from your own testing. Do not report a test as passed unless you have actually performed it.</div>
+<div class="footer"><span>StudyFind — Project Report</span><span>Data & Testing</span></div>
+</section>
+<section class="sheet">
+<h2>11. Limitations and Future Enhancements</h2>
+<h3>Current limitations</h3>
+<ul contenteditable="true"><li>The usefulness of resource search depends on the quality and completeness of resource records.</li><li>Study-guide depth and coverage may vary by topic; review all notes for correctness before examination use.</li><li>Features such as student accounts, uploads, bookmarks, or AI-based answers should be described as implemented only after they have been tested in the deployed version.</li></ul>
+<h3>Future enhancements</h3>
+<ul contenteditable="true"><li>Student login, personal dashboard, and saved bookmarks.</li><li>Secure resource upload and moderation workflow.</li><li>PDF preview and download support for verified resource files.</li><li>More detailed topic notes, diagrams, quizzes, and solved examples.</li><li>Improved filtering by semester, year, and resource type.</li><li>Accessibility improvements and automated testing.</li></ul>
+<h2 style="margin-top:36px">12. Conclusion</h2>
+<p contenteditable="true">StudyFind demonstrates how a student-focused web application can bring academic resource discovery and topic-based revision into a single interface. Its subject navigation, search-oriented workflow, study guides, responsive styling, and print support form a useful foundation for further development. With verified content, testing, and additional student-focused features, the platform can continue to grow into a more complete study companion.</p>
+<h2 style="margin-top:36px">13. References</h2>
+<ul contenteditable="true"><li>MDN Web Docs — HTML, CSS, JavaScript: https://developer.mozilla.org/</li><li>PostgreSQL Documentation: https://www.postgresql.org/docs/</li><li>GitHub Docs: https://docs.github.com/</li><li>Hatchable project console: https://hatchable.com/console/projects/studyfind</li><li>StudyFind project: https://studyfind.hatchable.site</li></ul>
+<h3 style="margin-top:50px">Student signature</h3>
+<p>______________________________</p><p class="muted">Name: <span contenteditable="true">[Your Name]</span> &nbsp; Date: <span contenteditable="true">[Date]</span></p>
+<div class="footer"><span>StudyFind — Project Report</span><span>Conclusion</span></div>
+</section>
+</div>
+<script>
+let editing=false;
+function toggleEdit(){editing=!editing;document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable=String(editing));document.querySelector('.toolbar button:nth-of-type(2)').textContent=editing?'Finish editing':'Edit report text';}
+function resetReport(){if(confirm('Reload the original report template? Unsaved edits will be lost.'))location.reload();}
+document.querySelectorAll('[contenteditable]').forEach(el=>el.contentEditable='false');
+</script>
+</body>
+</html>
