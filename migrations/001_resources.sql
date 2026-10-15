@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS resources (id BIGSERIAL PRIMARY KEY, title TEXT NOT NULL, subject TEXT NOT NULL, resource_type TEXT NOT NULL DEFAULT 'Notes', description TEXT, academic_year INTEGER, resource_url TEXT, created_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
+CREATE INDEX IF NOT EXISTS idx_resources_subject ON resources(subject);
+CREATE INDEX IF NOT EXISTS idx_resources_type ON resources(resource_type);
